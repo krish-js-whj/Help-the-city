@@ -21,15 +21,15 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(2000, 1000);
+  createCanvas(2000, 700);
   engine = Engine.create();
   world = engine.world;
 
-  ground = new Ground((2000-200)/2, 1000-200, 2000-200, 20);
+  ground = new Ground((2000-200)/2, 700-200, 2000-200, 20);
 
   hero = new Hero(200,2000-100,250);
   rope = new Rope(hero.body, { x: 300, y: 50 });
-  monster = new Monster(2000-900,1000-350,300);
+  monster = new Monster(2000-900,700-350,300);
 
   box1 = new Box(700, 500);
   box2 = new Box(600, 300);
@@ -49,7 +49,7 @@ function draw() {
 //}  else background("gamingbackground2.png");
   Engine.update(engine);
   textSize(20)
-  text("try lowering your page zoom if sprites collide",2000-400,1000-100)
+  text("try lowering your page zoom if sprites collide",2000-400,7000-100)
   ground.display();
   box1.display();
   box2.display();
@@ -69,7 +69,7 @@ function draw() {
     textSize(100)
     fill("red")
     stroke(3)
-    text("You Saved The Day!",300,1000/2)
+    text("You Saved The Day!",300,700/2)
    //**if (win){}
    //else 
    
@@ -88,7 +88,7 @@ function mouseReleased(){
 
 function keyPressed(){
   if(keyCode === 32){
-      Matter.Body.setPosition(hero.body, {x: 300, y: 1000-100});
+      Matter.Body.setPosition(hero.body, {x: 300, y: 700-100});
       rope.attach(hero.body);
      gameState="onSling"
   }
