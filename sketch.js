@@ -21,7 +21,7 @@ function preload() {
 }
 
 function setup() {
-  wW=windowWidth-400;
+  wW=windowWidth-100;
   wH=windowHeight-200
   createCanvas(wW, wH);
   engine = Engine.create();
