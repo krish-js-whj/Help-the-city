@@ -21,24 +21,24 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(2000, 700);
+  createCanvas(3000, 700);
   engine = Engine.create();
   world = engine.world;
 
-  ground = new Ground(700, 500, 1400, 20);
+  ground = new Ground(600, 600, 1200, 20);
 
-  hero = new Hero(200,500,250);
-  rope = new Rope(hero.body, { x: 300, y: 50 });
-  monster = new Monster(1100,350,300);
+  hero = new Hero(300,800,250);
+  rope = new Rope(hero.body, { x: 400, y: 50 });
+  monster = new Monster(1100,550,300);
 
-  box1 = new Box(700, 500);
-  box2 = new Box(600, 300);
-  box3 = new Box(600, 300);
-  box4 = new Box(600, 300);
-  box5 = new Box(600, 300);
-  box6 = new Box(750, 300);
-  box7 = new Box(750, 300);
-  box8 = new Box(750, 300);
+  box1 = new Box(550, 500);
+  box2 = new Box(550, 500);
+  box3 = new Box(550, 500);
+  box4 = new Box(700, 500);
+  box5 = new Box(700, 500);
+  box6 = new Box(700, 500);
+  box7 = new Box(700, 500);
+  box8 = new Box(850, 500);
   
 
 }
@@ -48,8 +48,6 @@ function draw() {
   background(bg);
 //}  else background("gamingbackground2.png");
   Engine.update(engine);
-  textSize(20)
-  text("try lowering your page zoom if sprites collide",1600,690)
   ground.display();
   box1.display();
   box2.display();
@@ -69,7 +67,7 @@ function draw() {
     textSize(100)
     fill("red")
     stroke(3)
-    text("You Saved The Day!",300,350)
+    text("You Saved The Day!",300,400)
    //**if (win){}
    //else 
    
@@ -88,7 +86,7 @@ function mouseReleased(){
 
 function keyPressed(){
   if(keyCode === 32){
-      Matter.Body.setPosition(hero.body, {x: 300, y: 600});
+      Matter.Body.setPosition(hero.body, {x: 300, y: 800});
       rope.attach(hero.body);
      gameState="onSling"
   }
