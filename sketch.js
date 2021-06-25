@@ -27,18 +27,18 @@ function setup() {
 
   ground = new Ground((windowWidth-800)/2, windowHeight-200, windowWidth-800, 20);
 
-  hero = new Hero(300,windowWidth-100,250);
-  rope = new Rope(hero.body, { x: 400, y: 50 });
+  hero = new Hero(200,windowWidth-100,250);
+  rope = new Rope(hero.body, { x: 300, y: 50 });
   monster = new Monster(windowWidth-900,windowHeight-350,300);
 
-  box1 = new Box(ground.width-500, windowHeight-500);
-  box2 = new Box(ground.width-600, windowHeight-300);
-  box3 = new Box(ground.width-600, windowHeight-300);
-  box4 = new Box(ground.width-600, windowHeight-300);
-  box5 = new Box(ground.width-600, windowHeight-300);
-  box6 = new Box(ground.width-450, windowHeight-300);
-  box7 = new Box(ground.width-450, windowHeight-300);
-  box8 = new Box(ground.width-450, windowHeight-300);
+  box1 = new Box(700, windowHeight-500);
+  box2 = new Box(600, windowHeight-300);
+  box3 = new Box(600, windowHeight-300);
+  box4 = new Box(600, windowHeight-300);
+  box5 = new Box(600, windowHeight-300);
+  box6 = new Box(750, windowHeight-300);
+  box7 = new Box(750, windowHeight-300);
+  box8 = new Box(750, windowHeight-300);
   
 
 }
