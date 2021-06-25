@@ -27,7 +27,7 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
-  ground = new Ground((wW-400)/2, wH-200, wW-400, 20);
+  ground = new Ground((wW-200)/2, wH-200, wW-200, 20);
 
   hero = new Hero(200,wW-100,250);
   rope = new Rope(hero.body, { x: 300, y: 50 });
