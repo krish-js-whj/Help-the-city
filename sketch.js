@@ -21,26 +21,26 @@ function preload() {
 }
 
 function setup() {
-  wW=windowWidth-100;
-  wH=windowHeight-200
+  wW=displayWidth-400;
+  wH=displayHeight-200
   createCanvas(wW, wH);
   engine = Engine.create();
   world = engine.world;
 
-  ground = new Ground((wW-800)/2, wH-200, wW-800, 20);
+  ground = new Ground((wW-400)/2, wH-200, wW-400, 20);
 
   hero = new Hero(200,wW-100,250);
   rope = new Rope(hero.body, { x: 300, y: 50 });
   monster = new Monster(wW-900,wH-350,300);
 
-  box1 = new Box(700, wH-500);
-  box2 = new Box(600, wH-300);
-  box3 = new Box(600, wH-300);
-  box4 = new Box(600, wH-300);
-  box5 = new Box(600, wH-300);
-  box6 = new Box(750, wH-300);
-  box7 = new Box(750, wH-300);
-  box8 = new Box(750, wH-300);
+  box1 = new Box(700, 500);
+  box2 = new Box(600, 300);
+  box3 = new Box(600, 300);
+  box4 = new Box(600, 300);
+  box5 = new Box(600, 300);
+  box6 = new Box(750, 300);
+  box7 = new Box(750, 300);
+  box8 = new Box(750, 300);
   
 
 }
