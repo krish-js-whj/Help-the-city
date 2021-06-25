@@ -47,6 +47,7 @@ function draw() {
  // if (backgroundImg){
   background(bg);
 //}  else background("gamingbackground2.png");
+    text("try lowering your page zoom if sprites collide",windowWidth-400,windowHeight-100)
   Engine.update(engine);
   ground.display();
   box1.display();
