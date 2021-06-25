@@ -21,24 +21,26 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  wW=windowWidth-400;
+  wH=windowHeight-200
+  createCanvas(wW, wH);
   engine = Engine.create();
   world = engine.world;
 
-  ground = new Ground((windowWidth-800)/2, windowHeight-200, windowWidth-800, 20);
+  ground = new Ground((wW-800)/2, wH-200, wW-800, 20);
 
-  hero = new Hero(200,windowWidth-100,250);
+  hero = new Hero(200,wW-100,250);
   rope = new Rope(hero.body, { x: 300, y: 50 });
-  monster = new Monster(windowWidth-900,windowHeight-350,300);
+  monster = new Monster(wW-900,wH-350,300);
 
-  box1 = new Box(700, windowHeight-500);
-  box2 = new Box(600, windowHeight-300);
-  box3 = new Box(600, windowHeight-300);
-  box4 = new Box(600, windowHeight-300);
-  box5 = new Box(600, windowHeight-300);
-  box6 = new Box(750, windowHeight-300);
-  box7 = new Box(750, windowHeight-300);
-  box8 = new Box(750, windowHeight-300);
+  box1 = new Box(700, wH-500);
+  box2 = new Box(600, wH-300);
+  box3 = new Box(600, wH-300);
+  box4 = new Box(600, wH-300);
+  box5 = new Box(600, wH-300);
+  box6 = new Box(750, wH-300);
+  box7 = new Box(750, wH-300);
+  box8 = new Box(750, wH-300);
   
 
 }
@@ -47,10 +49,9 @@ function draw() {
  // if (backgroundImg){
   background(bg);
 //}  else background("gamingbackground2.png");
-  fill("White");
-  stroke()
-  text("try lowering your page zoom if sprites collide",windowWidth-400,windowHeight-200)
   Engine.update(engine);
+  textSize(20)
+  text("try lowering your page zoom if sprites collide",wW-400,wH-100)
   ground.display();
   box1.display();
   box2.display();
@@ -70,7 +71,7 @@ function draw() {
     textSize(100)
     fill("red")
     stroke(3)
-    text("You Saved The Day!",300,windowHeight/2)
+    text("You Saved The Day!",300,wH/2)
    //**if (win){}
    //else 
    
@@ -89,7 +90,7 @@ function mouseReleased(){
 
 function keyPressed(){
   if(keyCode === 32){
-      Matter.Body.setPosition(hero.body, {x: 300, y: windowHeight-100});
+      Matter.Body.setPosition(hero.body, {x: 300, y: wH-100});
       rope.attach(hero.body);
      gameState="onSling"
   }
