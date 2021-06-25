@@ -21,24 +21,24 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(3000, 700);
+  createCanvas(windowWidth, windowHeight);
   engine = Engine.create();
   world = engine.world;
 
-  ground = new Ground(600, 600, 1200, 20);
+  ground = new Ground((windowWidth-800)/2, windowHeight-200, windowWidth-800, 20);
 
-  hero = new Hero(300,800,250);
+  hero = new Hero(300,windowWidth-100,250);
   rope = new Rope(hero.body, { x: 400, y: 50 });
-  monster = new Monster(1100,550,300);
+  monster = new Monster(windowWidth-900,windowHeight-350,300);
 
-  box1 = new Box(550, 500);
-  box2 = new Box(550, 500);
-  box3 = new Box(550, 500);
-  box4 = new Box(700, 500);
-  box5 = new Box(700, 500);
-  box6 = new Box(700, 500);
-  box7 = new Box(700, 500);
-  box8 = new Box(850, 500);
+  box1 = new Box(ground.width-500, windowHeight-500);
+  box2 = new Box(ground.width-600, windowHeight-300);
+  box3 = new Box(ground.width-600, windowHeight-300);
+  box4 = new Box(ground.width-600, windowHeight-300);
+  box5 = new Box(ground.width-600, windowHeight-300);
+  box6 = new Box(ground.width-450, windowHeight-300);
+  box7 = new Box(ground.width-450, windowHeight-300);
+  box8 = new Box(ground.width-450, windowHeight-300);
   
 
 }
@@ -67,7 +67,7 @@ function draw() {
     textSize(100)
     fill("red")
     stroke(3)
-    text("You Saved The Day!",300,400)
+    text("You Saved The Day!",300,windowHeight/2)
    //**if (win){}
    //else 
    
@@ -86,7 +86,7 @@ function mouseReleased(){
 
 function keyPressed(){
   if(keyCode === 32){
-      Matter.Body.setPosition(hero.body, {x: 300, y: 800});
+      Matter.Body.setPosition(hero.body, {x: 300, y: windowHeight-100});
       rope.attach(hero.body);
      gameState="onSling"
   }
